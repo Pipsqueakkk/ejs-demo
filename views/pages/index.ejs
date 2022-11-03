@@ -11,8 +11,16 @@
 
 <main>
   <div class="jumbotron">
-    <h1>This is great</h1>
+    <h1><%= message %></h1>
     <p>Welcome to templating using EJS</p>
+    <% if(dayOfWeek === 3) { %> 
+      <p>It's Wednesday my dudes</p>
+    <% } else {%>
+      <p>Wait for Wednesday, today is day <%= today %></p>
+      <script>console.log('Log 1 from client, time: ' + Date.now())</script>
+      <% console.log('Log 2 from server, time: ' + Date.now()) %>
+
+    <% }%>
   </div>
 </main>
 
